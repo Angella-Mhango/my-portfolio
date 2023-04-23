@@ -1,0 +1,18 @@
+body {
+  background-color: darkgreen;
+}
+h1 {
+  color: silver;
+}
+p {
+  color: red;
+}
+head
+ {
+background-image: url("pic7.jpg");
+}
+fieldset
+{background-image: url("mzun.png");
+  background-size: cover;
+  background-repeat: no-repeat;}
+a{color: silver}
