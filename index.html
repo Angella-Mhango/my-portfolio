@@ -2,7 +2,45 @@
 <html>
 <head>
   <title>portifolio</title>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
+   .slideshow-container {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Slides */
+    .mySlides {
+      display: none;
+    }
+
+    /* Caption text */
+    .text {
+      color: #f2f2f2;
+      font-size: 18px;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* The dots */
+    .dot {
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active {
+      background-color: #717171;
+    }
     .sidebar {
       background-color: silver;
       width:60px;
@@ -108,31 +146,85 @@
   margin: 10px 0;
 }
   </style>
+<script>
+    $(document).ready(function(){
+      $('.slideshow').slick({ dots: true });
+    });
+  </script>
 </head>
 <body>
-  <div class="sidebar">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ <div class="sidebar">
+  <nav>
+    <ul class="menu">
+      <li><a href="index.html"><i class="fas fa-home"></i><br>home</a></li>
+      <li><a href="projects.html"><i class="fas fa-folder-open"></i>project</a></li>
+      <li><a href="skills.html"><i class="fas fa-cogs"></i><br>skills</a></li>
+      <li><a href="contact.html"><i class="fa fa-envelope"></i><br>contact us</a></li>
+    </ul>
+  </nav>
 
-<nav>
-  <ul class="menu">
-    <li><a href="index.html"><i class="fas fa-home"></i><br>home</a></li>
-    <li><a href="home.html"><i class="fas fa-folder-open"></i>project</a></li>
-    <li><a href="skills.html"><i class="fas fa-cogs"></i><br>skills</a></li>
-  </ul>
-</nav>
+  <script>
+    // Smooth scroll function
+    function smoothScroll(event) {
+      event.preventDefault();
 
-   
- <form class="search-form">
-  <input type="text" placeholder="Search" class="search-input">
-  <button type="submit" class="search-button"><i class="fa fa-search"></i></button>
-</form>
+      const target = event.target.getAttribute("href");
+
+      // Scroll smoothly only when navigating to a different page
+      if (window.location.pathname !== target) {
+        window.location.href = target;
+      }
+    }
+
+    // Attach smooth scroll event listener to navigation links
+    const navigationLinks = document.querySelectorAll("nav a");
+    navigationLinks.forEach(link => {
+      link.addEventListener("click", smoothScroll);
+    });
+  </script>
+
+  <form class="search-form">
+    <input type="text" placeholder="Search" class="search-input">
+    <button type="submit" class="search-button"><i class="fa fa-search"></i></button>
+  </form>
 </div>
 
+<section>
     <h1>Angella Mhango</h1>
    <div class="image-container">
-     <img src="me.jpg" style="height:250px; width:300px" alt"this is the picture">
+     <img src="me.jpg" style="height:250px; width:300px" alt="this is the picture">
   </div>
   <div class="main-container">
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>Dynamic Greeting</title>
+  <script>
+    // Get the current time
+    var currentTime = new Date();
+    var currentHour = currentTime.getHours();
+
+    // Define the greeting based on the time of the day
+    var greeting;
+    if (currentHour < 12) {
+      greeting = "Good morning";
+    } else if (currentHour < 18) {
+      greeting = "Good afternoon";
+    } else {
+      greeting = "Good evening";
+    }
+
+    // Display the greeting
+    window.onload = function() {
+      document.getElementById("greeting").innerHTML = greeting;
+    };
+  </script>
+</head>
+<body>
+  <h1 id="greeting"></h1>
+</body>
+</html>
+
    <p>
     Angella Mhango is a student with a passion for creating innovative solutions, studying Information and comunication Technology at Mzuzu University, Angella has a deep understanding of software development principles and a proven track record of delivering high-quality projects.
   </p>
@@ -166,23 +258,172 @@ Possesses strong problem-solving abilities, documentation and reporting skills, 
   
 </ol>
 </div>
-<hr>
-<div class="main-container">
-   <h2>Web Development Projects</h2>
-   <fieldset>
-   <legend><h3>college online accomodation web</h3></legend>
-    <img src="web.JPG" style="height:200px; width:250px" alt"this is the picture"> 
-    <img src="web2.JPG" style="height:200px; width:250px" alt"this is the picture"> 
-    <img src="web3.JPG" style="height:200px; width:250px" alt"this is the picture">
-    <placeholder> <a href="home.html">view site</a></placeholder>      </fieldset> 
-    <fieldset>
-    <legend><h3>portifolio</h3></legend>
-    <img src="port1.JPG" style="height:200px; width:250px" alt"this is the picture"> 
-    <img src="port2.JPG" style="height:200px; width:250px" alt"this is the picture">
-    <img src="port3.JPG" style="height:200px; width:250px" alt"this is the picture"> 
-    <placeholder> <a href="index.html">view site</a></placeholder> 
-  </fieldset>
-  </div>
+</section>
+  <h2>Web Development Projects</h2>
+
+<fieldset>
+  <legend><h3>College Online Accommodation Web</h3></legend>
+  <center>
+    <div class="web-slideshow-container">
+      <div class="web-slide">
+        <img src="web.jpg" style="height:300px; width:500px" alt="Slide 1">
+      </div>
+      <div class="web-slide">
+        <img src="web2.jpg" style="height:300px; width:500px" alt="Slide 2">
+      </div>
+      <div class="web-slide">
+        <img src="web3.jpg" style="height:300px; width:500px" alt="Slide 3">
+      </div>
+
+      <!-- Web slideshow navigation dots -->
+      <div style="text-align:center">
+        <span class="web-dot"></span>
+        <span class="web-dot"></span>
+        <span class="web-dot"></span>
+      </div>
+    </div>
+    <a href="index.html">View Site</a>
+  </center>
+</fieldset>
+
+<fieldset>
+  <legend><h3>Portfolio</h3></legend>
+  <center>
+    <div class="portfolio-slideshow-container">
+      <div class="portfolio-slide">
+        <img src="port1.jpg" style="height:300px; width:500px" alt="Slide 1">
+      </div>
+      <div class="portfolio-slide">
+        <img src="port2.jpg" style="height:300px; width:500px" alt="Slide 2">
+      </div>
+      <div class="portfolio-slide">
+        <img src="port3.jpg" style="height:300px; width:500px" alt="Slide 3">
+      </div>
+
+      <!-- Portfolio slideshow navigation dots -->
+      <div style="text-align:center">
+        <span class="portfolio-dot"></span>
+        <span class="portfolio-dot"></span>
+        <span class="portfolio-dot"></span>
+      </div>
+    </div>
+    <a href="index.html">View Site</a>
+  </center>
+</fieldset>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  // Web Slideshow
+  var webSlideIndex = 0;
+  showWebSlides();
+
+  function showWebSlides() {
+    var i;
+    var webSlides = document.getElementsByClassName("web-slide");
+    var webDots = document.getElementsByClassName("web-dot");
+
+    for (i = 0; i < webSlides.length; i++) {
+      webSlides[i].style.display = "none";
+    }
+
+    webSlideIndex++;
+
+    if (webSlideIndex > webSlides.length) {
+      webSlideIndex = 1;
+    }
+
+    for (i = 0; i < webDots.length; i++) {
+      webDots[i].className = webDots[i].className.replace(" active", "");
+    }
+
+    webSlides[webSlideIndex - 1].style.display = "block";
+    webDots[webSlideIndex - 1].className += " active";
+
+    setTimeout(showWebSlides, 4000); // Change slide every 4 seconds
+  }
+
+  // Portfolio Slideshow
+  var portfolioSlideIndex = 0;
+  showPortfolioSlides();
+
+  function showPortfolioSlides() {
+    var i;
+    var portfolioSlides = document.getElementsByClassName("portfolio-slide");
+    var portfolioDots = document.getElementsByClassName("portfolio-dot");
+
+    for (i = 0; i < portfolioSlides.length; i++) {
+      portfolioSlides[i].style.display = "none";
+    }
+
+    portfolioSlideIndex++;
+
+    if (portfolioSlideIndex > portfolioSlides.length) {
+      portfolioSlideIndex = 1;
+    }
+
+    for (i = 0; i < portfolioDots.length; i++) {
+      portfolioDots[i].className = portfolioDots[i].className.replace(" active", "");
+    }
+
+    portfolioSlides[portfolioSlideIndex - 1].style.display = "block";
+    portfolioDots[portfolioSlideIndex - 1].className += " active";
+
+    setTimeout(showPortfolioSlides, 4000);
+  }
+</script>
+<h2>contact us</h2>
+<p>For a better communication please send us your questions and enquries and we will get back to you using the email you provide below</p>
+<form id="contactForm" onsubmit="validateForm(event)">
+  <label for="name">Name:</label> <br>
+  <input type="text" id="name" value="fullname"required>
+  <br>
+
+  <label for="email">Email:</label> <br>
+  <input type="email" id="email" value="email" required>
+  <br>
+
+  <label for="message">Message:</label> <br>
+  <textarea id="message" value="your message"required></textarea>
+   <br>
+
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+  function validateForm(event) {
+    event.preventDefault(); // Prevent form submission
+
+    // Get form inputs
+    var nameInput = document.getElementById("name");
+    var emailInput = document.getElementById("email");
+    var messageInput = document.getElementById("message");
+
+    // Check if inputs are valid
+    if (nameInput.checkValidity() && emailInput.checkValidity() && messageInput.checkValidity()) {
+      // Perform form submission or further processing here
+      alert("Form submitted successfully!");
+      // Reset form
+      document.getElementById("contactForm").reset();
+    } else {
+      // Display validation error messages
+      if (!nameInput.checkValidity()) {
+        alert("Please enter a valid name.");
+      }
+
+      if (!emailInput.checkValidity()) {
+        alert("Please enter a valid email address.");
+      }
+
+      if (!messageInput.checkValidity()) {
+        alert("Please enter a message.");
+      }
+    }
+  }
+</script>
+
+
 </div>
    <footer class="footer">
  
@@ -199,7 +440,7 @@ Possesses strong problem-solving abilities, documentation and reporting skills, 
   <h3>support</h3>
  <ol class="support-list">
   <li><a href="#">FAQ</a></li>
-  <li><a href="contactUs.html">Contact Us</a></li>
+  <li><a href="contact.html">Contact Us</a></li>
   <li><a href="ammhango@gmail.com">email us</a></li>
   </ol>
 </div>
